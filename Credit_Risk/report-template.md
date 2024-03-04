@@ -4,17 +4,17 @@
 
 In this section, describe the analysis you completed for the machine learning models used in this Challenge. This might include:
 
-**Explain the purpose of the analysis.**
+1) **Explain the purpose of the analysis.**
 
 Answer: The purpose of this analysis is to train and evaluate a model based on loan risk. We will use a dataset of historical lending activity from a peer-to-peer lending services company to build a model that can identify the creditworthiness of borrowers. 
 
 
-**Explain what financial information the data was on and what you needed to predict.**
+2) **Explain what financial information the data was on and what you needed to predict.**
 
 Answer: Here, we are provided a dataset of historical lending activity from a peer-to-peer lending company. This dataset comprises 77,536 rows (data points) and eight columns (features). The columns here are loan size, interest rate, borrower income, debt-to-income ratio, number of accounts, derogatory marks, total debts, and loan status.
 Based on the provided dataset, using a machine learning model, we are asked to predict the loan status of the borrowers if those loans are from the healthy or high-risk loan credit category. Here, we are trying to identify the creditworthiness of the borrowers by building a machine learning model and testing the model to predict the loan status of the borrowers.
 
-**Provide basic information about the variables you were trying to predict (e.g., `value_counts`).**
+3) **Provide basic information about the variables you were trying to predict (e.g., `value_counts`).**
 
 Answer: Some of the important variables used in the analysis are as follows:
 
@@ -27,16 +27,16 @@ Answer: Some of the important variables used in the analysis are as follows:
   -**Score, accuracy_score, and test_matrix:** These are all separate evaluation scores of our trained model. We compute these scores to understand our trained model's accuracy, competencies, and performance.
   
   
-**Describe the stages of the machine learning process you went through as part of this analysis.**
+4) **Describe the stages of the machine learning process you went through as part of this analysis.**
 
 Answer: First, I loaded the provided dataset in a CSV form into jupyter notebook using pd.read_csv(), then after some exploratory analysis, I separated the data into labels and features, with 'variable and 'X' variable. I checked the balance of my target values. I split the dataset into X_train, X_test, y_train, and y_test to create a model, train the model, and predict with 'X' data to predict the target values to compare the performance and accuracy of our model. Finally, we evaluated our model's performance by computing an accuracy score, generating a confusion matrix, and a classification report. 
 In the analysis, we also further resampled our training data with the RandomOverSampler module from the imbalance learn library to evaluate the model's ability to detect the performance improvement of minority classes by balancing the dataset. 
 
-**Briefly touch on any methods you used (e.g., `LogisticRegression` or any resampling method).**
+5) **Briefly touch on any methods you used (e.g., `LogisticRegression` or any resampling method).**
 
 Answer: In the analysis, we used the logistic regression on the original data first and then again employed a RandomOverSampler from the imbalanced-learn library to resample data before using logistic regression to improve the model's accuracy potentially and using RandomOverSampler before logistic regression can improve the model's ability to detect the minority class by balancing the dataset, which is beneficial for imbalanced datasets. However, applying proper cross-validation techniques and evaluating the model using appropriate metrics is essential to ensure that the model generalizes well to new data and is balanced.
 
-## Results
+6) ## Results
 
 **Using bulleted lists, describe all machine learning models' balanced accuracy scores and the precision and recall scores.**
 
@@ -89,7 +89,7 @@ The logistic regression model 2, after being trained on oversampled data, perfor
 
 ## Summary
 
-Summarize the results of the machine learning models and include a recommendation on the model to use, if any. For example:
+7) Summarize the results of the machine learning models and include a recommendation on the model to use, if any. For example:
 **Which one seems to perform best? How do you know it performs best?**
 
 Answer: To determine which model performs best, we must consider several aspects of the classification reports: precision, recall, f1-score, and the problem context, particularly the balance of the classes if applicable. A brief explanations are given below:
@@ -101,16 +101,17 @@ Here, not only accuracy for both categories but macro-average and weighted-avera
 Overall, the resampled dataset model (machine learning model 2) achieves a nearly perfect balance in performance between both classes, indicating it has effectively overcome the class imbalance issue in the original dataset model (machine learning model 1). In addition, predictions of  1's (high-risk loans) are significantly high, as 0.99 in machine learning model 2, which is a significant factor for any financial institution, particularly in our case, a lending company considering potential consequences any misclassifications can cause those. Hence, overall, machine learning model 2 performs best in this scenario.
 
 
-**Does performance depend on the problem we are trying to solve? (For example, is predicting the `1s` or the `0s` more important? )**
+8) **Does performance depend on the problem we are trying to solve? (For example, is predicting the `1s` or the `0s` more important? )**
 
 Answer: In this case, predicting the '1s is more important than the '0s. Because in such scenarios where missing a high-risk loan could lead to significant financial loss, it is crucial to have a high recall for the '1' (healthy loan) class. This means the model needs to correctly identify as many high-risk loans as possible, even if it results in some false positives (healthy loans incorrectly classified as high-risk).
 The cost of a false negative (failing to identify a high-risk loan) is typically much higher than that of a false positive (incorrectly identifying a loan as high-risk). A false negative could mean extending credit to a borrower likely to default, leading to direct financial losses.
 In summary, the performance of a predictive model should always be evaluated in the context of the specific problem it is solving, the consequences of different types of errors, or the alignment of the model's evaluation metrics with the business or operational goals.
 
-**If you do not recommend any of the models, please justify your reasoning.**
+9) **If you do not recommend any of the models, please justify your reasoning.**
+
 Answer: Oversampling, particularly methods like Random OverSampling, can be valuable for addressing class imbalance in machine learning datasets. However, it has several risks and potential drawbacks that can affect model performance and generalization. Some of them are the following:
   1) Overfitting: By replicating the minority class instances, oversampling can lead the model to overfit the training data. This means the model may perform exceptionally well on the training data but poorly on unseen data because it has memorized the minority class instances rather than learning to generalize from them.
-  2)Increased Computational Cost: Processing a larger dataset, which results from oversampling, requires more computational resources and time. This can be particularly challenging with large datasets or in situations with limited computational resources.
+  2) Increased Computational Cost: Processing a larger dataset, which results from oversampling, requires more computational resources and time. This can be particularly challenging with large datasets or in situations with limited computational resources.
 
 Overall, both models have both pros and cons; if I have to pick one model from both, I would instead pick model 2 considering all the factors mentioned above and also because we are doing credit risk analysis for a lending company to identify the creditworthiness of the borrower better for which Machine learning model 2 is more helpful and practical.
 
