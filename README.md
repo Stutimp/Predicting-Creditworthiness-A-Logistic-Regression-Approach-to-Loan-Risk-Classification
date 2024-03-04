@@ -1,6 +1,6 @@
 ## credit-risk-classification
 
-## Project on Supervised learning
+### Project on Supervised learning
 
 ### Overview 
 
@@ -68,4 +68,5 @@ Thank you !
 
 
 Regards,
+
 Stuti Poudel
