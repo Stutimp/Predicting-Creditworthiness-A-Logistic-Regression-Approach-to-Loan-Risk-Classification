@@ -60,6 +60,9 @@ Accuracy, Precision, and Recall scores of Machine Learning Model 2 predicting  b
 The macro and weighted averages for precision, recall, and F1-score are 0.99. The macro average treats both classes equally, indicating strong performance across both classes regardless of their size. The weighted average accounts for class imbalance, which aligns with the macro average due to oversampling, making the classes equal in size.
 
 The logistic regression model 2, after being trained on oversampled data, performs exceptionally well in predicting healthy and high-risk loans. The model demonstrates high precision and recall for both classes, which is particularly noteworthy given the initial class imbalance. Oversampling has effectively mitigated the imbalance issue, allowing the model to learn equally from both classes and thus perform well in both. This indicates a successful application of oversampling to improve model performance on an imbalanced dataset.
+
+### Summary
+
 In summary, the performance of a predictive model should always be evaluated in the context of the specific problem it is solving, the consequences of different types of errors, or the alignment of the model's evaluation metrics with the business or operational goals.
 Overall, both models have both pros and cons; if I have to pick one model from both, I would instead pick model 2 considering all the factors mentioned above and also because we are doing credit risk analysis for a lending company to identify the creditworthiness of the borrower better for which Machine learning model 2 is more helpful and practical.
 
