@@ -1,15 +1,26 @@
-## credit-risk-classification
+## Predicting Creditworthiness: A Logistic Regression Approach to Loan Risk Classification
 
-### Project on Supervised learning
+# Project Overview
+This project focuses on supervised learning, specifically building and evaluating a logistic regression model to predict the creditworthiness of borrowers using a dataset of historical lending activity. The goal is to determine whether a loan is likely to be healthy (low risk) or high risk based on various borrower characteristics.
 
-### Overview 
+The analysis involves training and evaluating a model based on loan risk using data from a peer-to-peer lending services company. The dataset contains 77,536 rows (data points) and eight columns (features), which include loan size, interest rate, borrower income, debt-to-income ratio, number of accounts, derogatory marks, total debts, and loan status.
 
-This analysis aims to train and evaluate a model based on loan risk. I will use a dataset of historical lending activity from a peer-to-peer lending services company to build a model that can identify the creditworthiness of borrowers. Here, I am provided a dataset of historical lending activity from a peer-to-peer lending company. This dataset comprises 77,536 rows (data points) and eight columns (features). The columns here are loan size, interest rate, borrower income, debt-to-income ratio, number of accounts, derogatory marks, total debts, and loan status.
-Based on the provided dataset, using a machine learning model,  I will predict the loan status of the borrowers if those loans are from the healthy or high-risk loan credit category. Here, I am trying to identify the creditworthiness of the borrowers by building two machine learning models and testing both models to predict the loan status of the borrowers and pick the best model for the company.
+Using this dataset, I will develop a machine learning model to predict whether the loans belong to the healthy or high-risk credit category. The primary objective is to assess the creditworthiness of borrowers by building and testing two machine learning models, then selecting the best-performing model for the company.
 
 ### Generation of two Machine Learning Models, they are, Machine Learning Model 1 and Machine Learning Model 2, using Original data and resampled dataset separately:
 
- First, I loaded the provided dataset in a CSV form into jupyter notebook using pd.read_csv(), then after some exploratory analysis, I separated the data into labels and features, with 'variable and 'X' variable. I checked the balance of my target values. I split the dataset into X_train, X_test, y_train, and y_test to create a model, named as Machine Learning Model 1, train the model, and predict with 'X' data to predict the target values to compare the performance and accuracy of my model. Finally, I evaluated my model's performance by computing an accuracy score, generating a confusion matrix, and a classification report. 
+## Steps Taken
+
+1. **Data Preparation:**
+
+ First, I loaded the provided dataset in a CSV form into jupyter notebook using pd.read_csv(), then after some exploratory analysis, I separated the data into labels and features, with 'variable and 'X' variable. I checked the balance of my target values. I split the dataset using `train_test_split` into X_train, X_test, y_train, and y_test to create a model, named as Machine Learning Model 1.
+ 
+ 2. **Logistic Regression Model:** 
+
+ Then I trained the model, and predicted with 'X' data to predict the target values to compare the performance and accuracy of my model. Finally, I evaluated my model's performance by computing an accuracy score, generating a confusion matrix, and a classification report. 
+
+ 3. **Evaluation Metrics:**
+
 In the analysis, I further resampled my training data with the RandomOverSampler module from the imbalance learn library , in order to create another model named as,Machine Learning Model 2 to evaluate the model's ability to detect the performance improvement of minority classes by balancing the dataset. 
 
 ## Outcomes
@@ -61,15 +72,17 @@ The macro and weighted averages for precision, recall, and F1-score are 0.99. Th
 
 The logistic regression model 2, after being trained on oversampled data, performs exceptionally well in predicting healthy and high-risk loans. The model demonstrates high precision and recall for both classes, which is particularly noteworthy given the initial class imbalance. Oversampling has effectively mitigated the imbalance issue, allowing the model to learn equally from both classes and thus perform well in both. This indicates a successful application of oversampling to improve model performance on an imbalanced dataset.
 
-### Summary
+### Credit Risk Analysis Report (Summary)
 
 In summary, the performance of a predictive model should always be evaluated in the context of the specific problem it is solving, the consequences of different types of errors, or the alignment of the model's evaluation metrics with the business or operational goals.
 Overall, both models have both pros and cons; if I have to pick one model from both, I would instead pick model 2 considering all the factors mentioned above and also because we are doing credit risk analysis for a lending company to identify the creditworthiness of the borrower better for which Machine learning model 2 is more helpful and practical.
 
+### Applications
+
+The logistic regression model provides a solid foundation for predicting credit risk, offering valuable insights into borrower behavior. However, further tuning and the exploration of additional models may be necessary to improve precision and overall performance.
 
 Thank you !
 
-
-Regards,
+Author
 
 Stuti Poudel
